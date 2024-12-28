@@ -47,3 +47,50 @@ if __name__ == '__main__':
 qq
 
 just adding some lines
+Here is an extended version of the Python unittest file with more test cases:
+
+```python
+import unittest
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
+
+    def test_split(self):
+        s = 'hello world'
+        self.assertEqual(s.split(), ['hello', 'world'])
+        with self.assertRaises(TypeError):
+            s.split(2)
+    
+    def test_replace(self):
+        self.assertEqual('hello world'.replace('world', 'there'), 'hello there')
+        self.assertEqual('hello world'.replace('l', 'x'), 'hexxo worxd')
+        
+    def test_find(self):
+        self.assertEqual('hello world'.find('world'), 6)
+        self.assertEqual('hello world'.find('there'), -1)
+        
+    def test_strip(self):
+        self.assertEqual('  hello  '.strip(), 'hello')
+        self.assertEqual('\thello\t'.strip(), 'hello')
+
+if __name__ == '__main__':
+    unittest.main()
+
+qq
+
+just adding some lines
+```
+
+You can run this script using the command:
+
+```bash
+python -m unittest test_script.py
+```
+
+Replace `test_script.py` with the name of your file.
